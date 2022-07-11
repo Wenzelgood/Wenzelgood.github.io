@@ -1,6 +1,8 @@
 body {
   font-family: 'Lobster', cursive;
 }
+
+@media print{@page {size: landscape}}
 .container {
   width: 1000px;
   margin:auto;

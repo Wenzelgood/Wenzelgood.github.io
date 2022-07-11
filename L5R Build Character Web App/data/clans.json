@@ -1,0 +1,621 @@
+[
+    {
+        "name": "Краб",
+        "reference": {
+            "book": "Core",
+            "page": 42
+        },
+        "description": "<p>На восточной границе Рокугана находится мрачное чудо - Стена Кайю, выглядящая, как большой сморщенный шрам. Её сланцево-серые блоки образуют сооружение десяти метров в толщину и тридцати метров в высоту. На юге лежат Теневые Земли, владения проклятых армий Дзигоку, а к северу расположены земли Клана Краба - создателя и защитника Стены.</p> <p>Люди из Клана Краба известны как стражи и воины - победители монстров и защитники Империи. Даже те, кто не берет в руки оружие, вносят вклад в войну своими умами и словами, обеспечивая ключевые поставки для Клана, образовывая союзы для защиты Стены или создавая новые технологии, чтобы повергнуть бесконечные орды Теневых Земель. Однако, задача Клана Краба ложится тяжким грузом на последователей Ками Хида. Они известны своей угрюмостью, боевым опытом и реалистичным взглядом на мир. Воинская слава - жалкая награда за ежедневные сражения с неумолимой силой Теневых Земель, и даже кажется проклятием. Тем не менее, эти люди находят способы отдыхать и самовыражаться, наслаждаясь маленькими радостями жизни.</p>",
+        "type": "Great",
+        "ring_increase": "Earth",
+        "skill_increase": "Fitness",
+        "status": 30,
+        "families": [
+            {
+                "name": "Hida",
+                "reference": {
+                    "book": "Core",
+                    "page": 49
+                },
+                "ring_increase": ["Earth", "Fire"],
+                "skill_increase": ["Command", "Tactics"],
+                "glory": 44,
+                "wealth": 4
+            },
+            {
+                "name": "Hiruma",
+                "reference": {
+                    "book": "Core",
+                    "page": 49
+                },
+                "ring_increase": ["Air", "Water"],
+                "skill_increase": ["Skulduggery", "Survival"],
+                "glory": 39,
+                "wealth": 3
+            },
+            {
+                "name": "Kaiu",
+                "reference": {
+                    "book": "Core",
+                    "page": 49
+                },
+                "ring_increase": ["Earth", "Fire"],
+                "skill_increase": ["Smithing", "Labor"],
+                "glory": 40,
+                "wealth": 5
+            },
+            {
+                "name": "Kuni",
+                "reference": {
+                    "book": "Core",
+                    "page": 49
+                },
+                "ring_increase": ["Earth", "Void"],
+                "skill_increase": ["Medicine", "Theology"],
+                "glory": 40,
+                "wealth": 4
+            },
+            {
+                "name": "Yasuki",
+                "reference": {
+                    "book": "Core",
+                    "page": 49
+                },
+                "ring_increase": ["Air", "Water"],
+                "skill_increase": ["Commerce", "Design"],
+                "glory": 39,
+                "wealth": 10
+            }
+        ]
+    },
+    {
+        "name": "Журавль",
+        "reference": {
+            "book": "Core",
+            "page": 43
+        },
+        "description": "</p>На рассвете Империи, после того, как Ками пали с Небес, они обнаружили себя в мире смертных, полном войн и жестокости. Ками Додзи - сестра Хантея, первого Императора - преисполнилась решимости принести порядок в эти варварские земли. Воплощение утонченности и изящества, Додзи отправилась к земным народам, успокаивая их, как ясная погода успокаивает бушующее море. Любой Журавль с радостью расскажет о том, как она научила людей письму, чтобы они могли запечатлевать свои достижения, политике, чтобы управлять своими землями, экономике и торговому делу, чтобы управлять своим богатством, искусству и культуре, чтобы придать своей жизни смысл. Те, кого ее учение затронуло больше всего, стали её преданными последователями, первыми самураями Клана Журавля. С тех пор, Журавли стали поэтами Империи, искусными кузнецами и фехтовальщиками. В каждом аспекте своей жизни Журавли стремятся к мастерству во всём, к идеалу, которому другие кланы могут лишь подражать.</p> </p>Клан Журавля представляет собой вершину утонченности в Рокугане и его члены известны своим изяществом и мастерством в социальных обычаях. Люди ожидают от них красноречия, вежливости и деликатности в высшей мере.</p>",
+        "type": "Great",
+        "ring_increase": "Air",
+        "skill_increase": "Culture",
+        "status": 35,
+        "families": [
+            {
+                "name": "Asahina",
+                "reference": {
+                    "book": "Core",
+                    "page": 50
+                },
+                "ring_increase": ["Water", "Void"],
+                "skill_increase": ["Aesthetics", "Theology"],
+                "glory": 40,
+                "wealth": 6
+            },
+            {
+                "name": "Daidoji",
+                "reference": {
+                    "book": "Core",
+                    "page": 50
+                },
+                "ring_increase": ["Earth", "Water"],
+                "skill_increase": ["Fitness", "Tactics"],
+                "glory": 40,
+                "wealth": 7
+            },
+            {
+                "name": "Doji",
+                "reference": {
+                    "book": "Core",
+                    "page": 50
+                },
+                "ring_increase": ["Air", "Water"],
+                "skill_increase": ["Courtesy", "Design"],
+                "glory": 44,
+                "wealth": 8
+            },
+            {
+                "name": "Kakita",
+                "reference": {
+                    "book": "Core",
+                    "page": 50
+                },
+                "ring_increase": ["Air", "Fire"],
+                "skill_increase": ["Aesthetics", "Meditation"],
+                "glory": 44,
+                "wealth": 7
+            }
+        ]
+    },
+    {
+        "name": "Дракон",
+        "reference": {
+            "book": "Core",
+            "page": 44
+        },
+        "description": "<p>В Империи, где обычно ценится уважение традиций, Клан Дракона - загадка. Вдохновленные их таинственным основателем, Ками Тогаси, Драконы уделяют внимание индивидуальному поиску просветления и мудрости больше, чем их собратья самураи</p> <p>За века, прошедшие с момента как Ками сошли на землю, последователи Тогаси заслужили определенную репутацию за странное поведение. Изолированные северными горами, Драконы участвуют в политике не так активно, как другие кланы - и когда они вмешиваются, причины остаются загадкой. Секрет Драконов в том, что они руководствуются провидением их основателя, но даже они не всегда понимают, что Тогаси узрел в своих видениях.</p> <p>Последователи Тогаси известны своими эзотерическими практиками, природной любознательностью и подлинной традицией пренебрежения традициями - по крайней мере, в глазах других кланов. Они кажутся проницательными и скромными, но также непредсказуемыми и даже опасными индивидуалистами. Они смотрят на проблемы под необычным углом и находят решения, о которых другие даже не задумываются.</p>",
+        "type": "Great",
+        "ring_increase": "Fire",
+        "skill_increase": "Meditation",
+        "status": 30,
+        "families": [
+            {
+                "name": "Agasha",
+                "reference": {
+                    "book": "Core",
+                    "page": 51
+                },
+                "ring_increase": ["Fire", "Void"],
+                "skill_increase": ["Medicine", "Smithing"],
+                "glory": 40,
+                "wealth": 4
+            },
+            {
+                "name": "Kitsuki",
+                "reference": {
+                    "book": "Core",
+                    "page": 51
+                },
+                "ring_increase": ["Air", "Water"],
+                "skill_increase": ["Government", "Sentiment"],
+                "glory": 44,
+                "wealth": 6
+            },
+            {
+                "name": "Mirumoto",
+                "reference": {
+                    "book": "Core",
+                    "page": 51
+                },
+                "ring_increase": ["Earth", "Water"],
+                "skill_increase": ["Fitness", "Tactics"],
+                "glory": 44,
+                "wealth": 5
+            },
+            {
+                "name": "Togashi Order",
+                "reference": {
+                    "book": "Core",
+                    "page": 51
+                },
+                "ring_increase": ["Earth", "Void"],
+                "skill_increase": ["Fitness", "Theology"],
+                "glory": 45,
+                "wealth": 3
+            }
+        ]
+    },
+    {
+        "name": "Лев",
+        "reference": {
+            "book": "Core",
+            "page": 45
+        },
+        "description": "<p>Каждый самурай, живущий в Рокугане, измеряет храбрость, честь и долг по стандарту, заданному Кланом Льва. Армия Клана Льва непревзойденна, более умелых стратегов и столь многочисленных войск не сыскать во всем Рокугане. Великое военное наследие дает Клану Льва статус Правой Руки Императора. Они защищают Императора, служат стражами и действующей армией.  </p>  <p>В свете этого, страх ничего не значит для самурая Клана Льва. Смертельная угроза лишь ободряет и поддерживает их храбрость, потому что нет более славного конца, чем в почетном бою. Будучи ветеранами бесчисленных войн, Львы знают: тот, кто атакует первым - побеждает. Прежде всего, они живут и умирают за Императора и Рокуган.</p> <p>Самураи Клана Льва - самые узнаваемые солдаты во всей Изумрудной Империи - знамениты свирепостью, верностью и храбростью. От них ожидают воинственности и агрессивности, забывая, что Ками Акодо был также мастером тактики и стратегии, способным учиться на своих ошибках и адаптировать новые стратегемы на поле боя.</p>",
+        "type": "Great",
+        "ring_increase": "Water",
+        "skill_increase": "Tactics",
+        "status": 35,
+        "families": [
+            {
+                "name": "Akodo",
+                "reference": {
+                    "book": "Core",
+                    "page": 52
+                },
+                "ring_increase": ["Air", "Earth"],
+                "skill_increase": ["Command", "Government"],
+                "glory": 44,
+                "wealth": 5
+            },
+            {
+                "name": "Ikoma",
+                "reference": {
+                    "book": "Core",
+                    "page": 52
+                },
+                "ring_increase": ["Air", "Water"],
+                "skill_increase": ["Composition", "Performance"],
+                "glory": 40,
+                "wealth": 5
+            },
+            {
+                "name": "Kitsu",
+                "reference": {
+                    "book": "Core",
+                    "page": 52
+                },
+                "ring_increase": ["Void", "Water"],
+                "skill_increase": ["Meditation", "Theology"],
+                "glory": 40,
+                "wealth": 4
+            },
+            {
+                "name": "Matsu",
+                "reference": {
+                    "book": "Core",
+                    "page": 52
+                },
+                "ring_increase": ["Earth", "Fire"],
+                "skill_increase": ["Command", "Fitness"],
+                "glory": 44,
+                "wealth": 5
+            }
+        ]
+    },
+    {
+        "name": "Феникс",
+        "reference": {
+            "book": "Core",
+            "page": 46
+        },
+        "description": "<p>Феникс - символ противоречия: взрывная сила и великая сдержанность, большой интеллект и глубокое смирение, благородное самопожертвование и величественное возрождение. Это переплетение добродетелей освещает путь самого мистического Великого Клана, хранителей Дао Синсея и смотрителей души Империи.</p> <p>Как аромат благовоний незаметно разносится по всем углам святилища, так и Царства Духов невидимо пересекаются с Царством Смертных. Феникс выступает посредником между мирами, взывая к душе этих земель. Горы обваливаются по их тихим просьбам, пересохшие реки снова наполняются водой, болезни изгоняются, беспокойные призраки возвращаются в небытие и урожай созревает на ранее бесплодных пустошах. Тем не менее, Феникс понимает что даже чистейшие намерения могут привести к разрушительным последствиям, если баланс элементов нарушится. Хотя другие считают Фениксов слишком нерешительными в своих мольбах к Ками, лишь немногие достаточно безрассудны, чтобы проверить преданность Феникса гармонии и миру.</p> <p>Ками Сиба и жрец Исава были очень разными лидерами, один скромный, другой горделивый, один спокойный и мудрый, другой яростный и сияющий. Люди ожидают, что члены Клан Феникса должны быть спокойными, вдумчивым и образованным, но также страстными и иногда даже высокомерными из-за обширных знаний, которыми обладает их клан. И Сиба, и Исава были глубоко духовными; эта связь определяет Клан Феникса с ранних дней и люди до сих пор ожидают, что члены Клана Феникса будут больше озабочены космическими проблемами, нежели земными.</p>",
+        "type": "Great",
+        "ring_increase": "Void",
+        "skill_increase": "Theology",
+        "status": 30,
+        "families": [
+            {
+                "name": "Asako",
+                "reference": {
+                    "book": "Core",
+                    "page": 53
+                },
+                "ring_increase": ["Air", "Fire"],
+                "skill_increase": ["Culture", "Sentiment"],
+                "glory": 40,
+                "wealth": 5
+            },
+            {
+                "name": "Isawa",
+                "reference": {
+                    "book": "Core",
+                    "page": 53
+                },
+                "ring_increase": ["Fire", "Void"],
+                "skill_increase": ["Meditation", "Theology"],
+                "glory": 44,
+                "wealth": 5
+            },
+            {
+                "name": "Kaito",
+                "reference": {
+                    "book": "Core",
+                    "page": 53
+                },
+                "ring_increase": ["Air", "Void"],
+                "skill_increase": ["Fitness", "Theology"],
+                "glory": 40,
+                "wealth": 4
+            },
+            {
+                "name": "Shiba",
+                "reference": {
+                    "book": "Core",
+                    "page": 53
+                },
+                "ring_increase": ["Earth", "Water"],
+                "skill_increase": ["Meditation", "Tactics"],
+                "glory": 40,
+                "wealth": 5
+            }
+        ]
+    },
+    {
+        "name": "Скорпион",
+        "reference": {
+            "book": "Core",
+            "page": 47
+        },
+        "description": "<p>Шестью ужасными словами Ками Баюси наставлял своих последователей в новообразованном Клане Скорпиона на темный и опасный путь. Враги маячат снаружи границ Рокугана, но они так же таятся и внутри. Баюси поклялся защитить Империю любыми средствами. Скрытая Рука Императора может дотянуться там, где Кодекс Бусидо ограничивает Левую и Правую Руки Императора - придворных Журавля и могучие легионы Льва. Чтобы сражаться с лжецами, ворами и предателями в рядах Великих Кланов, последователи Баюси должны лгать, воровать и предавать в ответ. Оружием Скорпиона стали шантаж, отравления и саботаж. Скорпионы замарали свои руки, чтобы руки других оставались чисты.</p> <p>И всё же, несмотря на - а может и из-за - грозной репутации клана, не найдется никого более верного, чем Скорпионы. В клане обманщиков и манипуляторов, доверие - это заработанное тяжелым трудом сокровище, которое нужно беречь и хранить. За предательством следует молниеносное возмездие, души вероломных оказываются навеки связаны в ужасном забвении, в месте, известном как Роща Предателей. Такая яростная верность это слабое утешение, учитывая опасную, но жизненно важную роль, которую Скорпионы играли в Империи с момента, когда их Ками произнес свои роковые слова: “Я буду твоим злодеем, Хантей.”</p> <p>Наследники Баюси знамениты коварным мастерством в интригах, но также и потенциальными выгодами от партнерства с ними - ведь, не поощряя достойно союзников, они никогда не смогли бы сохранить свое положение великих интриганов Империи. От Скорпионов ожидают в равной степени обольстительности и коварства - и преданности только Императору.</p>",
+        "type": "Great",
+        "ring_increase": "Air",
+        "skill_increase": "Skulduggery",
+        "status": 35,
+        "families": [
+            {
+                "name": "Bayushi",
+                "reference": {
+                    "book": "Core",
+                    "page": 54
+                },
+                "ring_increase": ["Air", "Fire"],
+                "skill_increase": ["Courtesy", "Design"],
+                "glory": 44,
+                "wealth": 8
+            },
+            {
+                "name": "Shosuro",
+                "reference": {
+                    "book": "Core",
+                    "page": 54
+                },
+                "ring_increase": ["Air", "Water"],
+                "skill_increase": ["Courtesy", "Performance"],
+                "glory": 40,
+                "wealth": 6
+            },
+            {
+                "name": "Soshi",
+                "reference": {
+                    "book": "Core",
+                    "page": 54
+                },
+                "ring_increase": ["Air", "Void"],
+                "skill_increase": ["Design", "Theology"],
+                "glory": 40,
+                "wealth": 6
+            },
+            {
+                "name": "Yogo",
+                "reference": {
+                    "book": "Core",
+                    "page": 54
+                },
+                "ring_increase": ["Earth", "Void"],
+                "skill_increase": ["Composition", "Theology"],
+                "glory": 39,
+                "wealth": 4
+            }
+        ]
+    },
+    {
+        "name": "Единорог",
+        "reference": {
+            "book": "Core",
+            "page": 48
+        },
+        "description": "<p>Тысячу лет назад Клан Ки-Рин покинул Рокуган, чтобы найти врагов, прячущихся за пределами Изумрудной Империи. Их путешествие было трудным и они обнаружили множество странных и могущественных угроз. Клан обучался, побеждая каждого врага, меняя стиль боя, магические практики и даже философию. Чтобы выжить, он был вынужден адаптироваться и превозмогать. После восьми веков странствий, Клан Ветра возвратился в Империю как Клан Единорога. Они были одеты в меха, говорили на иностранных языках и носили странное оружие. Хотя они все еще почитают Ками Синдзё, они далеко отошли от традиций и обычаев Изумрудной Империи</p> <p>Потомки Синдзё известны как умелые всадники, стрелки, посыльные, и многие из них владеют чужеземными боевыми техниками, школами и философией. Члены Клана Единорога обладают репутацией мирских и общительных людей, но немного грубых в вежливом обществе рокуганцев, учитывая, что многие члены клана проводят большую часть своей жизни в диких землях Единорогов и за их пределами.</p>",
+        "type": "Great",
+        "ring_increase": "Water",
+        "skill_increase": "Survival",
+        "status": 30,
+        "families": [
+            {
+                "name": "Ide",
+                "reference": {
+                    "book": "Core",
+                    "page": 55
+                },
+                "ring_increase": ["Earth", "Water"],
+                "skill_increase": ["Commerce", "Courtesy"],
+                "glory": 40,
+                "wealth": 9
+            },
+            {
+                "name": "Iuchi",
+                "reference": {
+                    "book": "Core",
+                    "page": 55
+                },
+                "ring_increase": ["Air", "Void"],
+                "skill_increase": ["Meditation", "Theology"],
+                "glory": 40,
+                "wealth": 5
+            },
+            {
+                "name": "Moto",
+                "reference": {
+                    "book": "Core",
+                    "page": 55
+                },
+                "ring_increase": ["Earth", "Fire"],
+                "skill_increase": ["Command", "Survival"],
+                "glory": 40,
+                "wealth": 6
+            },
+            {
+                "name": "Shinjo",
+                "reference": {
+                    "book": "Core",
+                    "page": 55
+                },
+                "ring_increase": ["Fire", "Water"],
+                "skill_increase": ["Sentiment", "Survival"],
+                "glory": 44,
+                "wealth": 8
+            },
+            {
+                "name": "Utaku",
+                "reference": {
+                    "book": "Core",
+                    "page": 55
+                },
+                "ring_increase": ["Earth", "Fire"],
+                "skill_increase": ["Survival", "Tactics"],
+                "glory": 44,
+                "wealth": 6
+            }
+        ]
+    },
+    {
+        "name": "The Imperial Families",
+        "reference": {
+            "book": "EE",
+            "page": 228
+        },
+        "description": "",
+        "type": "Other",
+        "ring_increase": "Air",
+        "skill_increase": "Government",
+        "status": 40,
+        "families": [
+            {
+                "name": "Miya",
+                "reference": {
+                    "book": "EE",
+                    "page": 229
+                },
+                "ring_increase": ["Air", "Earth"],
+                "skill_increase": ["Courtesy", "Culture"],
+                "glory": 44,
+                "wealth": 8
+            },
+            {
+                "name": "Otomo",
+                "reference": {
+                    "book": "EE",
+                    "page": 230
+                },
+                "ring_increase": ["Air", "Water"],
+                "skill_increase": ["Culture", "Sentiment"],
+                "glory": 43,
+                "wealth": 9
+            },
+            {
+                "name": "Seppun",
+                "reference": {
+                    "book": "EE",
+                    "page": 231
+                },
+                "ring_increase": ["Earth", "Void"],
+                "skill_increase": ["Meditation", "Theology"],
+                "glory": 45,
+                "wealth": 6
+            }
+        ]
+    },
+    {
+        "name": "Falcon",
+        "reference": {
+            "book": "SL",
+            "page": 87
+        },
+        "type": "Minor",
+        "ring_increase": "Void",
+        "skill_increase": "Theology",
+        "status": 26,
+        "families": [
+            {
+                "name": "Toritaka",
+                "reference": {
+                    "book": "SL",
+                    "page": 87
+                },
+                "ring_increase": ["Earth", "Water"],
+                "skill_increase": ["Survival", "Meditation"],
+                "glory": 35,
+                "wealth": 3
+            }
+        ]
+    },
+    {
+        "name": "Mantis",
+        "reference": {
+            "book": "Mantis",
+            "page": 4
+        },
+        "type": "Minor",
+        "ring_increase": "Water",
+        "skill_increase": "Seafaring",
+        "status": 25,
+        "families": [
+            {
+                "name": "The Families of the Fleet",
+                "reference": {
+                    "book": "Mantis",
+                    "page": 4
+                },
+                "ring_increase": ["Fire", "Water"],
+                "skill_increase": ["Commerce", "Survival"],
+                "glory": 36,
+                "wealth": 7
+            }
+        ]
+    },
+    {
+        "name": "Tortoise",
+        "reference": {
+            "book": "GMK",
+            "page": 8
+        },
+        "type": "Minor",
+        "ring_increase": "Air",
+        "skill_increase": "Commerce",
+        "status": 25,
+        "families": [
+            {
+                "name": "Kasuga",
+                "reference": {
+                    "book": "GMK",
+                    "page": 8
+                },
+                "ring_increase": ["Earth", "Water"],
+                "skill_increase": ["Skulduggery", "Government"],
+                "glory": 33,
+                "wealth": 9
+            }
+        ]
+    },
+    {
+        "name": "Deer",
+        "reference": {
+            "book": "CoS",
+            "page": 88
+        },
+        "type": "Minor",
+        "ring_increase": "Air",
+        "skill_increase": "Sentiment",
+        "status": 30,
+        "families": [
+            {
+                "name": "Shika",
+                "reference": {
+                    "book": "CoS",
+                    "page": 88
+                },
+                "ring_increase": ["Water", "Fire"],
+                "skill_increase": ["Courtesy", "Culture"],
+                "glory": 35,
+                "wealth": 5
+            }
+        ]
+    },
+    {
+        "name": "Centipede",
+        "reference": {
+            "book": "CR",
+            "page": 79
+        },
+        "type": "Minor",
+        "ring_increase": "Fire",
+        "skill_increase": "Theology",
+        "status": 30,
+        "families": [
+            {
+                "name": "Moshi",
+                "reference": {
+                    "book": "CR",
+                    "page": 79
+                },
+                "ring_increase": ["Air", "Fire"],
+                "skill_increase": ["Fitness", "Meditation"],
+                "glory": 40,
+                "wealth": 3
+            }
+        ]
+    },
+    {
+        "name": "Badger",
+        "reference": {
+            "book": "FoV",
+            "page": 71
+        },
+        "type": "Minor",
+        "ring_increase": "Earth",
+        "skill_increase": "Martial Arts [Unarmed]",
+        "status": 25,
+        "families": [
+            {
+                "name": "Ichir\u014d",
+                "reference": {
+                    "book": "FoV",
+                    "page": 71
+                },
+                "ring_increase": ["Earth", "Fire"],
+                "skill_increase": ["Fitness", "Tactics"],
+                "glory": 35,
+                "wealth": 3
+            }
+        ]
+    }
+]
