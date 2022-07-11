@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Интерактивный лист персонажа VtM Revised</title>
+	<link rel="stylesheet" href="main.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	<link href="https://fonts.googleapis.com/css2?family=Lobster&amp;display=swap" rel="stylesheet">
+	<style></style>
+</head>
+
+<body cz-shortcut-listen="true">
+	<div class="container">
+		<div class="title"> <img class="center-align" src="logo.svg" alt="" height="120" width="100%"> </div>
+		<div class="row">
+			<div class="col">
+				<div class="field-text">
+					<label for="name">Имя</label>
+					<input type="text" value="" name="" id="name"> </div>
+				<div class="field-text">
+					<label for="gamer">Игрок</label>
+					<input type="text" value="" name="" id="gamer"> </div>
+				<div class="field-text">
+					<label for="chronic">Хроника</label>
+					<input type="text" value="" name="" id="chronic"> </div>
+			</div>
+			<div class="col">
+				<div class="field-text">
+					<label for="nature">Натура</label>
+					<input type="text" value="" name="" id="nature"> </div>
+				<div class="field-text">
+					<label for="mask">Маска</label>
+					<input type="text" value="" name="" id="mask"> </div>
+				<div class="field-text">
+					<label for="clan">Клан</label>
+					<input type="text" value="" name="" id="clan"> </div>
+			</div>
+			<div class="col">
+				<div class="field-text">
+					<label for="generation">Поколение</label>
+					<input type="number" value="13" min="3" max="15" name="" id="generation"> </div>
+				<div class="field-text">
+					<label for="home">Убежище</label>
+					<input type="text" value="" name="" id="home"> </div>
+				<div class="field-text">
+					<label for="concept">Концепт</label>
+					<input type="text" value="" name="" id="concept"> </div>
+			</div>
+		</div>
+		<div class="hr">
+			<hr>
+			<h2>Атрибуты</h2>
+			<hr> </div>
+		<div class="row">
+			<div class="col">
+				<h3>Физические</h3>
+				<div class="attribute">
+					<div class="value"> <span class="attr_name">Сила</span>
+						<div class="dot_set" target="strength">
+							<div class="dot" state="1" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="1" name="" id="strength"> </div>
+					<div class="specialization">
+						<input type="text" value="" name="" target="strength" id="strength_spec" class="hidden"> </div>
+				</div>
+				<div class="attribute">
+					<div class="value"> <span class="attr_name">Ловкость</span>
+						<div class="dot_set" target="agility">
+							<div class="dot" state="1" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="1" name="" id="agility"> </div>
+					<div class="specialization">
+						<input type="text" value="" name="" target="agility" id="agility_spec" class="hidden"> </div>
+				</div>
+				<div class="attribute">
+					<div class="value"> <span class="attr_name">Выносливость</span>
+						<div class="dot_set" target="vitality">
+							<div class="dot" state="1" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="1" name="" id="vitality"> </div>
+					<div class="specialization">
+						<input type="text" value="" name="" target="vitality" id="vitality_spec" class="hidden"> </div>
+				</div>
+			</div>
+			<div class="col">
+				<h3>Социальные</h3>
+				<div class="attribute">
+					<div class="value"> <span class="attr_name">Обаяние</span>
+						<div class="dot_set" target="charm">
+							<div class="dot" state="1" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="1" name="" id="charm"> </div>
+					<div class="specialization">
+						<input type="text" value="" name="" target="charm" id="charm_spec" class="hidden"> </div>
+				</div>
+				<div class="attribute">
+					<div class="value"> <span class="attr_name">Манипуляция</span>
+						<div class="dot_set" target="manipulation">
+							<div class="dot" state="1" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="1" name="" id="manipulation"> </div>
+					<div class="specialization">
+						<input type="text" value="" name="" target="manipulation" id="manipulation_spec" class="hidden"> </div>
+				</div>
+				<div class="attribute">
+					<div class="value"> <span class="attr_name">Внешность</span>
+						<div class="dot_set" target="looks">
+							<div class="dot" state="1" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="1" name="" id="looks"> </div>
+					<div class="specialization">
+						<input type="text" value="" name="" target="looks" id="looks_spec" class="hidden"> </div>
+				</div>
+			</div>
+			<div class="col">
+				<h3>Ментальные</h3>
+				<div class="attribute">
+					<div class="value"> <span class="attr_name">Восприятие</span>
+						<div class="dot_set" target="preception">
+							<div class="dot" state="1" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="1" name="" id="preception"> </div>
+					<div class="specialization">
+						<input type="text" value="" name="" target="preception" id="preception_spec" class="hidden"> </div>
+				</div>
+				<div class="attribute">
+					<div class="value"> <span class="attr_name">Интелект</span>
+						<div class="dot_set" target="intelligence">
+							<div class="dot" state="1" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="1" name="" id="intelligence"> </div>
+					<div class="specialization">
+						<input type="text" value="" name="" target="intelligence" id="intelligence_spec" class="hidden"> </div>
+				</div>
+				<div class="attribute">
+					<div class="value"> <span class="attr_name">Смекалка</span>
+						<div class="dot_set" target="smartness">
+							<div class="dot" state="1" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="1" name="" id="smartness"> </div>
+					<div class="specialization">
+						<input type="text" value="" name="" target="smartness" id="smartness_spec" class="hidden"> </div>
+				</div>
+			</div>
+		</div>
+		<div class="hr">
+			<hr>
+			<h2>Способности</h2>
+			<hr> </div>
+		<div class="row">
+			<div class="col">
+				<h3>Таланты</h3>
+				<div class="skill">
+					<div class="value"> <span class="attr_name">Атлетика</span>
+						<div class="dot_set" target="athletics">
+							<div class="dot" state="0" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="0" name="" id="athletics"> </div>
+					<div class="specialization">
+						<input type="text" value="" name="" target="athletics" id="athletics_spec" class="hidden"> </div>
+				</div>
+				<div class="skill">
+					<div class="value"> <span class="attr_name">Внимательность</span>
+						<div class="dot_set" target="vigilance">
+							<div class="dot" state="0" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="0" name="" id="vigilance"> </div>
+					<div class="specialization">
+						<input type="text" value="" name="" target="vigilance" id="vigilance_spec" class="hidden"> </div>
+				</div>
+				<div class="skill">
+					<div class="value"> <span class="attr_name">Запугивание</span>
+						<div class="dot_set" target="intimidation">
+							<div class="dot" state="0" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="0" name="" id="intimidation"> </div>
+					<div class="specialization">
+						<input type="text" value="" name="" target="intimidation" id="intimidation_spec" class="hidden"> </div>
+				</div>
+				<div class="skill">
+					<div class="value"> <span class="attr_name">Знание улиц</span>
+						<div class="dot_set" target="streetwise">
+							<div class="dot" state="0" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="0" name="" id="streetwise"> </div>
+					<div class="specialization">
+						<input type="text" value="" name="" target="streetwise" id="streetwise_spec" class="hidden"> </div>
+				</div>
+				<div class="skill">
+					<div class="value"> <span class="attr_name">Лидерство</span>
+						<div class="dot_set" target="leadership">
+							<div class="dot" state="0" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="0" name="" id="leadership"> </div>
+					<div class="specialization">
+						<input type="text" value="" name="" target="leadership" id="leadership_spec" class="hidden"> </div>
+				</div>
+				<div class="skill">
+					<div class="value"> <span class="attr_name">Рукопашный бой</span>
+						<div class="dot_set" target="brawl">
+							<div class="dot" state="0" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="0" name="" id="brawl"> </div>
+					<div class="specialization">
+						<input type="text" value="" name="" target="brawl" id="brawl_spec" class="hidden"> </div>
+				</div>
+				<div class="skill">
+					<div class="value"> <span class="attr_name"><nobr>Уклонение</nobr></span>
+						<div class="dot_set" target="subterfuge">
+							<div class="dot" state="0" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="0" name="" id="subterfuge"> </div>
+					<div class="specialization">
+						<input type="text" value="" name="" target="subterfuge" id="subterfuge_spec" class="hidden"> </div>
+				</div>
+				<div class="skill">
+					<div class="value"> <span class="attr_name">Хитрость</span>
+						<div class="dot_set" target="cunning">
+							<div class="dot" state="0" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="0" name="" id="cunning"> </div>
+					<div class="specialization">
+						<input type="text" value="" name="" target="cunning" id="cunning_spec" class="hidden"> </div>
+				</div>
+				<div class="skill">
+					<div class="value"> <span class="attr_name">Экспрессия</span>
+						<div class="dot_set" target="expression">
+							<div class="dot" state="0" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="0" name="" id="expression"> </div>
+					<div class="specialization">
+						<input type="text" value="" name="" target="expression" id="expression_spec" class="hidden"> </div>
+				</div>
+				<div class="skill">
+					<div class="value"> <span class="attr_name">Эмпатия</span>
+						<div class="dot_set" target="empathy">
+							<div class="dot" state="0" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="0" name="" id="empathy"> </div>
+					<div class="specialization">
+						<input type="text" value="" name="" target="empathy" id="empathy_spec" class="hidden"> </div>
+				</div>
+				<div class="skill">
+					<div class="value">
+						<input type="text" value="" name="" id="custom_1_title">
+						<div class="dot_set" target="custom_1">
+							<div class="dot" state="0" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="0" name="" id="custom_1"> </div>
+					<div class="specialization">
+						<input type="text" value="" name="" target="custom_1" id="custom_1_spec" class="hidden"> </div>
+				</div>
+				<div class="skill">
+					<div class="value">
+						<input type="text" value="" name="" id="custom_2_title">
+						<div class="dot_set" target="custom_2">
+							<div class="dot" state="0" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="0" name="" id="custom_2"> </div>
+					<div class="specialization">
+						<input type="text" value="" name="" target="custom_2" id="custom_2_spec" class="hidden"> </div>
+				</div>
+			</div>
+			<div class="col">
+				<h3>Навыки</h3>
+				<div class="skill">
+					<div class="value"> <span class="attr_name">Безопасность</span>
+						<div class="dot_set" target="security">
+							<div class="dot" state="0" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="0" name="" id="security"> </div>
+					<div class="specialization">
+						<input type="text" value="" name="" target="security" id="security_spec" class="hidden"> </div>
+				</div>
+				<div class="skill">
+					<div class="value"> <span class="attr_name">Вождение</span>
+						<div class="dot_set" target="drive">
+							<div class="dot" state="0" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="0" name="" id="drive"> </div>
+					<div class="specialization">
+						<input type="text" value="" name="" target="drive" id="drive_spec" class="hidden"> </div>
+				</div>
+				<div class="skill">
+					<div class="value"> <span class="attr_name">Выживание</span>
+						<div class="dot_set" target="survival">
+							<div class="dot" state="0" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="0" name="" id="survival"> </div>
+					<div class="specialization">
+						<input type="text" value="" name="" target="survival" id="survival_spec" class="hidden"> </div>
+				</div>
+				<div class="skill">
+					<div class="value"> <span class="attr_name">Исполнение</span>
+						<div class="dot_set" target="execution">
+							<div class="dot" state="0" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="0" name="" id="execution"> </div>
+					<div class="specialization">
+						<input type="text" value="" name="" target="execution" id="execution_spec" class="hidden"> </div>
+				</div>
+				<div class="skill">
+					<div class="value"> <span class="attr_name">Знание животных</span>
+						<div class="dot_set" target="animals">
+							<div class="dot" state="0" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="0" name="" id="animals"> </div>
+					<div class="specialization">
+						<input type="text" value="" name="" target="animals" id="animals_spec" class="hidden"> </div>
+				</div>
+				<div class="skill">
+					<div class="value"> <span class="attr_name">Ремесла</span>
+						<div class="dot_set" target="craft">
+							<div class="dot" state="0" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="0" name="" id="craft"> </div>
+					<div class="specialization">
+						<input type="text" value="" name="" target="craft" id="craft_spec" class="hidden"> </div>
+				</div>
+				<div class="skill">
+					<div class="value"> <span class="attr_name">Скрытность</span>
+						<div class="dot_set" target="secrecy">
+							<div class="dot" state="0" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="0" name="" id="secrecy"> </div>
+					<div class="specialization">
+						<input type="text" value="" name="" target="secrecy" id="secrecy_spec" class="hidden"> </div>
+				</div>
+				<div class="skill">
+					<div class="value"> <span class="attr_name">Стрельба</span>
+						<div class="dot_set" target="shooting">
+							<div class="dot" state="0" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="0" name="" id="shooting"> </div>
+					<div class="specialization">
+						<input type="text" value="" name="" target="shooting" id="shooting_spec" class="hidden"> </div>
+				</div>
+				<div class="skill">
+					<div class="value"> <span class="attr_name">Фехтование</span>
+						<div class="dot_set" target="fencing">
+							<div class="dot" state="0" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="0" name="" id="fencing"> </div>
+					<div class="specialization">
+						<input type="text" value="" name="" target="fencing" id="fencing_spec" class="hidden"> </div>
+				</div>
+				<div class="skill">
+					<div class="value"> <span class="attr_name">Этикет</span>
+						<div class="dot_set" target="etiquette">
+							<div class="dot" state="0" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="0" name="" id="etiquette"> </div>
+					<div class="specialization">
+						<input type="text" value="" name="" target="etiquette" id="etiquette_spec" class="hidden"> </div>
+				</div>
+				<div class="skill">
+					<div class="value">
+						<input type="text" value="" name="" id="custom_3_title">
+						<div class="dot_set" target="custom_3">
+							<div class="dot" state="0" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="0" name="" id="custom_3"> </div>
+					<div class="specialization">
+						<input type="text" value="" name="" target="custom_3" id="custom_3_spec" class="hidden"> </div>
+				</div>
+				<div class="skill">
+					<div class="value">
+						<input type="text" value="" name="" id="custom_4_title">
+						<div class="dot_set" target="custom_4">
+							<div class="dot" state="0" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="0" name="" id="custom_4"> </div>
+					<div class="specialization">
+						<input type="text" value="" name="" target="custom_4" id="custom_4_spec" class="hidden"> </div>
+				</div>
+			</div>
+			<div class="col">
+				<h3>Знания</h3>
+				<div class="skill">
+					<div class="value"> <span class="attr_name"><nobr>Академические</nobr></span>
+						<div class="dot_set" target="academics">
+							<div class="dot" state="0" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="0" name="" id="academics"> </div>
+					<div class="specialization">
+						<input type="text" value="" name="" target="academics" id="academics_spec" class="hidden"> </div>
+				</div>
+				<div class="skill">
+					<div class="value"> <span class="attr_name"><nobr>Законы</nobr></span>
+						<div class="dot_set" target="laws">
+							<div class="dot" state="0" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="0" name="" id="laws"> </div>
+					<div class="specialization">
+						<input type="text" value="" name="" target="laws" id="laws_spec" class="hidden"> </div>
+				</div>
+				<div class="skill">
+					<div class="value"> <span class="attr_name">Компьютеры</span>
+						<div class="dot_set" target="computers">
+							<div class="dot" state="0" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="0" name="" id="computers"> </div>
+					<div class="specialization">
+						<input type="text" value="" name="" target="computers" id="computers_spec" class="hidden"> </div>
+				</div>
+				<div class="skill">
+					<div class="value"> <span class="attr_name">Лингвистика</span>
+						<div class="dot_set" target="linguistics">
+							<div class="dot" state="0" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="0" name="" id="linguistics"> </div>
+					<div class="specialization">
+						<input type="text" value="" name="" target="linguistics" id="linguistics_spec" class="hidden"> </div>
+				</div>
+				<div class="skill">
+					<div class="value"> <span class="attr_name">Медицина</span>
+						<div class="dot_set" target="medicine">
+							<div class="dot" state="0" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="0" name="" id="medicine"> </div>
+					<div class="specialization">
+						<input type="text" value="" name="" target="medicine" id="medicine_spec" class="hidden"> </div>
+				</div>
+        <div class="skill">
+					<div class="value"> <span class="attr_name">Научные</span>
+						<div class="dot_set" target="science">
+							<div class="dot" state="0" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="0" name="" id="science"> </div>
+					<div class="specialization">
+						<input type="text" value="" name="" target="science" id="science_spec" class="hidden"> </div>
+				</div>
+				<div class="skill">
+					<div class="value"> <span class="attr_name">Оккультизм</span>
+						<div class="dot_set" target="occult">
+							<div class="dot" state="0" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="0" name="" id="occult"> </div>
+					<div class="specialization">
+						<input type="text" value="" name="" target="occult" id="occult_spec" class="hidden"> </div>
+				</div>
+				<div class="skill">
+					<div class="value"> <span class="attr_name">Политика</span>
+						<div class="dot_set" target="politics">
+							<div class="dot" state="0" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="0" name="" id="politics"> </div>
+					<div class="specialization">
+						<input type="text" value="" name="" target="politics" id="politics_spec" class="hidden"> </div>
+				</div>
+				<div class="skill">
+					<div class="value"> <span class="attr_name">Расследование</span>
+						<div class="dot_set" target="investigation">
+							<div class="dot" state="0" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="0" name="" id="investigation"> </div>
+					<div class="specialization">
+						<input type="text" value="" name="" target="investigation" id="investigation_spec" class="hidden"> </div>
+				</div>
+				<div class="skill">
+					<div class="value"> <span class="attr_name">Финансы</span>
+						<div class="dot_set" target="finance">
+							<div class="dot" state="0" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="0" name="" id="finance"> </div>
+					<div class="specialization">
+						<input type="text" value="" name="" target="finance" id="finance_spec" class="hidden"> </div>
+				</div>
+				<div class="skill">
+					<div class="value">
+						<input type="text" value="" name="" id="custom_5_title">
+						<div class="dot_set" target="custom_5">
+							<div class="dot" state="0" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="0" name="" id="custom_5"> </div>
+					<div class="specialization">
+						<input type="text" value="" name="" target="custom_5" id="custom_5_spec" class="hidden"> </div>
+				</div>
+				<div class="skill">
+					<div class="value">
+						<input type="text" value="" name="" id="custom_6_title">
+						<div class="dot_set" target="custom_6">
+							<div class="dot" state="0" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="0" name="" id="custom_6"> </div>
+					<div class="specialization">
+						<input type="text" value="" name="" target="custom_6" id="custom_6_spec" class="hidden"> </div>
+				</div>
+			</div>
+		</div>
+		<div class="hr">
+			<hr>
+			<h2>Преймущества</h2>
+			<hr> </div>
+		<div class="row">
+			<div class="col">
+				<h3>Дисциплины</h3>
+				<div class="advantages">
+					<div class="value">
+						<input type="text" value="" name="" id="dist_1_title">
+						<div class="dot_set" target="dist_1">
+							<div class="dot" state="0" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="0" name="" id="dist_1"> </div>
+				</div>
+				<div class="advantages">
+					<div class="value">
+						<input type="text" value="" name="" id="dist_2_title">
+						<div class="dot_set" target="dist_2">
+							<div class="dot" state="0" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="0" name="" id="dist_2"> </div>
+				</div>
+				<div class="advantages">
+					<div class="value">
+						<input type="text" value="" name="" id="dist_3_title">
+						<div class="dot_set" target="dist_3">
+							<div class="dot" state="0" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="0" name="" id="dist_3"> </div>
+				</div>
+				<div class="advantages">
+					<div class="value">
+						<input type="text" value="" name="" id="dist_4_title">
+						<div class="dot_set" target="dist_4">
+							<div class="dot" state="0" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="0" name="" id="dist_4"> </div>
+				</div>
+				<div class="advantages">
+					<div class="value">
+						<input type="text" value="" name="" id="dist_5_title">
+						<div class="dot_set" target="dist_5">
+							<div class="dot" state="0" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="0" name="" id="dist_5"> </div>
+				</div>
+				<div class="advantages">
+					<div class="value">
+						<input type="text" value="" name="" id="dist_6_title">
+						<div class="dot_set" target="dist_6">
+							<div class="dot" state="0" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="0" name="" id="dist_6"> </div>
+				</div>
+			</div>
+			<div class="col">
+				<h3>Факты биографии</h3>
+				<div class="advantages">
+					<div class="value">
+						<input type="text" value="" name="" id="fact_1_title">
+						<div class="dot_set" target="fact_1">
+							<div class="dot" state="0" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="0" name="" id="fact_1"> </div>
+				</div>
+				<div class="advantages">
+					<div class="value">
+						<input type="text" value="" name="" id="fact_2_title">
+						<div class="dot_set" target="fact_2">
+							<div class="dot" state="0" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="0" name="" id="fact_2"> </div>
+				</div>
+				<div class="advantages">
+					<div class="value">
+						<input type="text" value="" name="" id="fact_3_title">
+						<div class="dot_set" target="fact_3">
+							<div class="dot" state="0" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="0" name="" id="fact_3"> </div>
+				</div>
+				<div class="advantages">
+					<div class="value">
+						<input type="text" value="" name="" id="fact_4_title">
+						<div class="dot_set" target="fact_4">
+							<div class="dot" state="0" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="0" name="" id="fact_4"> </div>
+				</div>
+				<div class="advantages">
+					<div class="value">
+						<input type="text" value="" name="" id="fact_5_title">
+						<div class="dot_set" target="fact_5">
+							<div class="dot" state="0" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="0" name="" id="fact_5"> </div>
+				</div>
+				<div class="advantages">
+					<div class="value">
+						<input type="text" value="" name="" id="fact_6_title">
+						<div class="dot_set" target="fact_6">
+							<div class="dot" state="0" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="0" name="" id="fact_6"> </div>
+				</div>
+			</div>
+			<div class="col">
+				<h3>Добродеители</h3>
+				<div class="virtues">
+					<h4>Сознательность/Убеждённость</h4>
+					<div class="value">
+						<div class="dot_set" target="conscience_6">
+							<div class="dot" state="1" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="1" name="" id="conscience_6"> </div>
+				</div>
+				<div class="virtues">
+					<h4>Самоконтроль/Инстинкты</h4>
+					<div class="value">
+						<div class="dot_set" target="contol_6">
+							<div class="dot" state="1" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="1" name="" id="contol_6"> </div>
+				</div>
+				<div class="virtues">
+					<h4>Смелость</h4>
+					<div class="value">
+						<div class="dot_set" target="courage">
+							<div class="dot" state="1" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+						</div>
+						<input type="hidden" value="1" name="" id="courage"> </div>
+				</div>
+			</div>
+		</div>
+		<div class="hr">
+			<hr>
+			<h2>Прочее</h2>
+			<hr> </div>
+		<div class="row">
+			<div class="col">
+				<h3>Достоинства и недостатки</h3>
+				<div class="dignity">
+					<input type="text" value="" name="" id="dig_1">
+					<input type="number" value="" name="" min="-10" max="10" id="dig_cof_1"> </div>
+				<div class="dignity">
+					<input type="text" value="" name="" id="dig_2">
+					<input type="number" value="" name="" min="-10" max="10" id="dig_cof_2"> </div>
+				<div class="dignity">
+					<input type="text" value="" name="" id="dig_3">
+					<input type="number" value="" name="" min="-10" max="10" id="dig_cof_3"> </div>
+				<div class="dignity">
+					<input type="text" value="" name="" id="dig_4">
+					<input type="number" value="" name="" min="-10" max="10" id="dig_cof_4"> </div>
+				<div class="dignity">
+					<input type="text" value="" name="" id="dig_5">
+					<input type="number" value="" name="" min="-10" max="10" id="dig_cof_5"> </div>
+				<div class="dignity">
+					<input type="text" value="" name="" id="dig_6">
+					<input type="number" value="" name="" min="-10" max="10" id="dig_cof_6"> </div>
+				<div class="dignity">
+					<input type="text" value="" name="" id="dig_7">
+					<input type="number" value="" name="" min="-10" max="10" id="dig_cof_7"> </div>
+				<div class="dignity">
+					<input type="text" value="" name="" id="dig_8">
+					<input type="number" value="" name="" min="-10" max="10" id="dig_cof_8"> </div>
+				<div class="dignity">
+					<input type="text" value="" name="" id="dig_9">
+					<input type="number" value="" name="" min="-10" max="10" id="dig_cof_9"> </div>
+				<div class="dignity">
+					<input type="text" value="" name="" id="dig_10">
+					<input type="number" value="" name="" min="-10" max="10" id="dig_cof_10"> </div>
+				<div class="dignity">
+					<input type="text" value="" name="" id="dig_11">
+					<input type="number" value="" name="" min="-10" max="10" id="dig_cof_11"> </div>
+				<div class="dignity">
+					<input type="text" value="" name="" id="dig_12">
+					<input type="number" value="" name="" min="-10" max="10" id="dig_cof_12"> </div>
+			</div>
+			<div class="col">
+				<h3>Человечность/Путь</h3>
+				<div class="path">
+					<input type="text" value="" name="" id="path_name">
+					<div class="value">
+						<div class="dot_set" target="path">
+							<div class="dot" state="1" v="1"></div>
+							<div class="dot" state="1" v="2"></div>
+							<div class="dot" state="1" v="3"></div>
+							<div class="dot" state="1" v="4"></div>
+							<div class="dot" state="1" v="5"></div>
+							<div class="dot" state="0" v="6"></div>
+							<div class="dot" state="0" v="7"></div>
+							<div class="dot" state="0" v="8"></div>
+							<div class="dot" state="0" v="9"></div>
+							<div class="dot" state="0" v="10"></div>
+						</div>
+						<input type="hidden" value="5" name="" id="path"> </div>
+				</div>
+				<h3>Воля</h3>
+				<div class="will">
+					<div class="value">
+						<div class="dot_set" target="max_will">
+							<div class="dot" state="1" v="1"></div>
+							<div class="dot" state="1" v="2"></div>
+							<div class="dot" state="1" v="3"></div>
+							<div class="dot" state="1" v="4"></div>
+							<div class="dot" state="1" v="5"></div>
+							<div class="dot" state="0" v="6"></div>
+							<div class="dot" state="0" v="7"></div>
+							<div class="dot" state="0" v="8"></div>
+							<div class="dot" state="0" v="9"></div>
+							<div class="dot" state="0" v="10"></div>
+						</div>
+						<input type="hidden" value="5" name="" id="max_will"> </div>
+					<div class="value">
+						<div class="dot_set quad" target="will">
+							<div class="dot" state="1" v="1"></div>
+							<div class="dot" state="1" v="2"></div>
+							<div class="dot" state="1" v="3"></div>
+							<div class="dot" state="1" v="4"></div>
+							<div class="dot" state="1" v="5"></div>
+							<div class="dot" state="0" v="6"></div>
+							<div class="dot" state="0" v="7"></div>
+							<div class="dot" state="0" v="8"></div>
+							<div class="dot" state="0" v="9"></div>
+							<div class="dot" state="0" v="10"></div>
+						</div>
+						<input type="hidden" value="5" name="" id="will"> </div>
+				</div>
+				<h3>Запас крови</h3>
+				<div class="blood_pull">
+					<div class="value">
+						<div class="dot_set quad" target="blood">
+							<div class="dot" state="0" v="1"></div>
+							<div class="dot" state="0" v="2"></div>
+							<div class="dot" state="0" v="3"></div>
+							<div class="dot" state="0" v="4"></div>
+							<div class="dot" state="0" v="5"></div>
+							<div class="dot" state="0" v="6"></div>
+							<div class="dot" state="0" v="7"></div>
+							<div class="dot" state="0" v="8"></div>
+							<div class="dot" state="0" v="9"></div>
+							<div class="dot" state="0" v="10"></div>
+							<div class="dot" state="0" v="11"></div>
+						</div>
+						<input type="hidden" value="0" name="" id="blood"> </div>
+				</div>
+			</div>
+			<div class="col">
+				<h3>Здоровье</h3>
+				<div class="helth"> <span class="helth_title">Задет</span> <span>0</span>
+					<div class="helth_dot noselect" target="helth_1" state="0"></div>
+					<input type="hidden" value="0" name="" id="helth_1"> </div>
+				<div class="helth"> <span class="helth_title">Поврежден</span> <span>-1</span>
+					<div class="helth_dot noselect" target="helth_2" state="0"></div>
+					<input type="hidden" value="0" name="" id="helth_2"> </div>
+				<div class="helth"> <span class="helth_title">Ранен</span> <span>-1</span>
+					<div class="helth_dot noselect" target="helth_3" state="0"></div>
+					<input type="hidden" value="0" name="" id="helth_3"> </div>
+				<div class="helth"> <span class="helth_title">Тяжело ранен</span> <span>-2</span>
+					<div class="helth_dot noselect" target="helth_4" state="0"></div>
+					<input type="hidden" value="0" name="" id="helth_4"> </div>
+				<div class="helth"> <span class="helth_title">Травмирован</span> <span>-2</span>
+					<div class="helth_dot noselect" target="helth_5" state="0"></div>
+					<input type="hidden" value="0" name="" id="helth_5"> </div>
+				<div class="helth"> <span class="helth_title">Искалечен</span> <span>-5</span>
+					<div class="helth_dot noselect" target="helth_6" state="0"></div>
+					<input type="hidden" value="0" name="" id="helth_6"> </div>
+				<div class="helth"> <span class="helth_title">Обездвижен</span> <span></span>
+					<div class="helth_dot noselect" target="helth_7" state="0"></div>
+					<input type="hidden" value="0" name="" id="helth_7"> </div>
+				<h3>Слабость</h3>
+				<div class="value">
+					<textarea name="" id="flaw"></textarea>
+					<!-- <input type="text" value="" name="" id="flaw"/> -->
+				</div>
+				<h3>Опыт</h3>
+				<div class="value expirience-container">
+					<input type="number" value="0" name="" id="expirience"> </div>
+			</div>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position: absolute; width: 0; height: 0" aria-hidden="true" id="__SVG_SPRITE_NODE__"></svg>
+	<script src="main.js"></script>
+</body>
+
+</html>
