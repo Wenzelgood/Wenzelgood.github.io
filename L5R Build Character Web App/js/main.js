@@ -43,5 +43,5 @@ function selectFamily () {
   
 }
 
-getJson('../data/clans.json')
+getJson('../L5R Build Character Web App/data/clans.json')
   .then((dataClans) => selectClan(dataClans));
