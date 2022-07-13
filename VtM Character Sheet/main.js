@@ -16,120 +16,100 @@ generations[13] = {limit: 5, pull: 10, spend: 1};
 generations[14] = {limit: 5, pull: 10, spend: 1};
 generations[15] = {limit: 5, pull: 10, spend: 1};
 
+let setDots = (
+    selectElements = "",
+    counterOuter = true,
+    counterValue = 1, 
+    counterStart = counterValue, 
+    counterEnd = 5, 
+    conditionOption = 0
+    ) => {
+    document.querySelectorAll(selectElements).forEach(function(e) {
+        e.innerHTML = "";
+        let input = document.querySelector("#" + e.getAttribute("target"));
+        let i = counterOuter === true? counterValue : undefined;
+        let spec_input = document.querySelector("input[target=" + e.getAttribute("target") + "]");
+        for (i = counterStart; i <= counterEnd; i++) {
+            e.insertAdjacentHTML("beforeend",'<div class="dot" state="' + (input.value < i ? 0 : 1) + '" v="' + i + '"></div>');
+        }
+        switch(conditionOption) {
+            case 0:
+                break;
+            case 1:
+                if (spec_input.value != "" && input.value < 4) {
+                    spec_input.value;
+                }
+                if (input.value >= 4) {
+                    spec_input.classList.remove("hidden");
+                } else {
+                    spec_input.classList.add("hidden");
+                }
+                break;
+            case 2:
+                if (input.value >= i ) {
+                    input.value = i - 1;
+                }
+                if (spec_input.value != "" && input.value < 4) {
+                    spec_input.value;
+                }
+                if (input.value >= 4) {
+                    spec_input.classList.remove("hidden");
+                } else {
+                    spec_input.classList.add("hidden");
+                }
+                break;
+        }
+    });
+    }
 
 let updateDot = function() {
-    let currentGeneration = $("#generation").val();
-    $(".attribute>.value>.dot_set").each(function() {
-        $(this).html("");
-        let input = $("#" + $(this).attr("target"));
-        let i = 1;
-        let spec_input = $("input[target=" + $(this).attr("target") + "]")
-        for (i = 1; i <= generations[currentGeneration].limit; i++) {
-            $(this).append('<div class="dot" state="' + (input.val() < i ? 0 : 1) + '" v="' + i + '"></div>')
-        }
-        if (input.val() >= i ) {
-            input.val(i - 1);
-        }
-        if (spec_input.val() != "" && input.val() < 4) {
-            spec_input.val("");
-        }
-        if (input.val() >= 4) {
-            spec_input.removeClass("hidden");
-        } else {
-            spec_input.addClass("hidden");
-        }
-    });
-    $(".skill>.value>.dot_set").each(function() {
-        $(this).html("");
-        let input = $("#" + $(this).attr("target"));
-        let i = 1;
-        let spec_input = $("input[target=" + $(this).attr("target") + "]")
-        for (i = 1; i <= 5; i++) {
-            $(this).append('<div class="dot" state="' + (input.val() < i ? 0 : 1) + '" v="' + i + '"></div>')
-        }
-        if (spec_input.val() != "" && input.val() < 4) {
-            spec_input.val("");
-        }
-        if (input.val() >= 4) {
-            spec_input.removeClass("hidden");
-        } else {
-            spec_input.addClass("hidden");
-        }
-    });
-    $(".advantages>.value>.dot_set").each(function() {
-        $(this).html("");
-        let input = $("#" + $(this).attr("target"));
-        for (let i = 1; i <= 5; i++) {
-            $(this).append('<div class="dot" state="' + (input.val() < i ? 0 : 1) + '" v="' + i + '"></div>')
-        }
-    });
-    $(".virtues>.value>.dot_set").each(function() {
-        $(this).html("");
-        let input = $("#" + $(this).attr("target"));
-        for (let i = 1; i <= 5; i++) {
-            $(this).append('<div class="dot" state="' + (input.val() < i ? 0 : 1) + '" v="' + i + '"></div>')
-        }
-    });
-    $(".path>.value>.dot_set").each(function() {
-        $(this).html("");
-        let input = $("#" + $(this).attr("target"));
-        for (let i = 1; i <= 10; i++) {
-            $(this).append('<div class="dot" state="' + (input.val() < i ? 0 : 1) + '" v="' + i + '"></div>')
-        }
-    });
-    $(".will>.value>.dot_set").each(function() {
-        $(this).html("");
-        let input = $("#" + $(this).attr("target"));
-        for (let i = 1; i <= 10; i++) {
-            $(this).append('<div class="dot" state="' + (input.val() < i ? 0 : 1) + '" v="' + i + '"></div>')
-        }
-    });
-    $(".blood_pull>.value>.dot_set").each(function() {
-        $(this).html("");
-        let input = $("#" + $(this).attr("target"));
-        for (let i = 1; i <= generations[currentGeneration].pull; i++) {
-            $(this).append('<div class="dot" state="' + (input.val() < i ? 0 : 1) + '" v="' + i + '"></div>')
-        }
-    });
-    $(".helth_dot").each(function() {
-        $(this).html("");
-        let input = $("#" + $(this).attr("target"));
-        let val = parseInt(input.val());
+    let currentGeneration = document.querySelector("#generation").value;
+    setDots(".attribute>.value>.dot_set", ...[,,,], generations[currentGeneration].limit, 2);
+    setDots(".skill>.value>.dot_set", ...[,,,], 5, 1);
+    setDots(".advantages>.value>.dot_set", ...[,,,], 5, 0);
+    setDots(".virtues>.value>.dot_set", ...[,,,], 5, 0);
+    setDots(".path>.value>.dot_set", ...[,,,], 10, 0);
+    setDots(".will>.value>.dot_set", ...[,,,], 10, 0);
+    setDots(".blood_pull>.value>.dot_set", ...[,,,], generations[currentGeneration].pull, 0);
+    document.querySelectorAll(".helth_dot").forEach(function(e) {
+        e.innerHTML = "";
+        let input = document.querySelector("#" + e.getAttribute("target"));
+        let val = parseInt(input.value);
         switch(val) {
             case 0:
                 break;
             case 1:
-                $(this).html("<span>/</span>")
+                e.innerHTML = "<span>/</span>";
                 break;
             case 2:
-                $(this).html("<span>Ⅹ</span>")
+                e.innerHTML = "<span>Ⅹ</span>";
                 break;
             case 3:
-                $(this).html("<span>∗</span>")
+                e.innerHTML = "<span>∗</span>";
                 break;
         }
     });
 }
 
 let toggleHelth = function(dot) {
-    let state = parseInt(dot.attr("state"));
-    let input = $("#" + dot.attr("target"));
+    let state = parseInt(dot.getAttribute("state"));
+    let input = document.querySelector("#" + dot.getAttribute("target"));
     switch(state) {
         case 0:
-            dot.attr("state", 1)
-            input.val(1)
+            dot.setAttribute("state", 1);
+            input.value = 1;
             break;
         case 1:
-            dot.attr("state", 2)
-            input.val(2)
+            dot.setAttribute("state", 2);
+            input.value = 2;
             break;
         case 2:
-            dot.attr("state", 3)
-            input.val(3)
+            dot.setAttribute("state", 3);
+            input.value = 3;
             break;
         case 3:
-            dot.attr("state", 0)
-            input.val(0)
+            dot.setAttribute("state", 0);
+            input.value = 0;
             break;
     }
     updateDot();
@@ -137,61 +117,70 @@ let toggleHelth = function(dot) {
 
 
 let toggleDot = function(dot) {
-    let input = $("#" + dot.parent().attr("target"));
-    let dotVal = parseInt(dot.attr("v"));
-    if (dot.attr("state") == "1") {
-        input.val(dotVal - 1);
+    let input = document.querySelector("#" + dot.parentElement.getAttribute("target"));
+    let dotVal = parseInt(dot.getAttribute("v"));
+    if (dot.getAttribute("state") == "1") {
+        input.value = dotVal - 1;
     } else {
-        input.val(dotVal);
+        input.value = dotVal;
     }
     updateDot();
 }
 
 let changeSpecialization = function(input) {
-    if (input.val() != "") {
-        input.addClass("noborder");
+    if (input.value != "") {
+        input.classList.add("noborder");
     } else {
-        input.removeClass("noborder");
+        input.classList.remove("noborder");
     }
 }
 
 let setUrlParams = function() {
-    $("input,textarea").each(function() {
-        let input = $(this);
-        if (typeof input.val() == "undefined") {
+    document.querySelectorAll("input,textarea").forEach(function(e) {
+        let input = e;
+        if (typeof input.value == "undefined") {
             return;
         }
-        url.searchParams.set(input.attr("id"), input.val());
+        url.searchParams.set(input.getAttribute("id"), input.value);
     });
     console.log(url.toString());
     window.history.replaceState(null, "", url.toString())
 }
 
 let readUrlParams = function() {
-    url.searchParams.forEach(function(value, key) {
-        $("#" + key).val(value);
+    url.searchParams.forEach(function(val, key) {
+        document.querySelector("#" + key).value = val;
     })
 }
 
 
-$(document).ready(function() {
+document.addEventListener('DOMContentLoaded', function() {
     readUrlParams();
-    $("#generation").on("change", function() {
+    document.querySelector("#generation").addEventListener("change", function() {
         updateDot();
     })
-    $("body").on("click", ".dot", function() {
-        toggleDot($(this));
-        setUrlParams();
+    document.body.addEventListener("click", function(e) {
+        let dot = e.target.closest('.dot')
+        if (dot) {
+            toggleDot(e.target);
+            setUrlParams();
+        }
     })
-    $("body").on("click", ".helth_dot", function() {
-        toggleHelth($(this));
-        setUrlParams();
+    document.body.addEventListener("click", function(e) {
+        let helthDot = e.target.closest('.helth_dot');
+        if (helthDot) {
+            toggleHelth(helthDot);
+            setUrlParams();
+        }
     })
-    $(".specialization>input").on("change", function() {
-        changeSpecialization($(this));
+    document.querySelector(".specialization>input").addEventListener("change", function(e) {
+        changeSpecialization(e.target);
     })
     updateDot();
-    $("input,textarea").on("change", function() {
-        setUrlParams();
+    document.addEventListener("change", function(e) {
+        let inputAndTextarea = e.target.closest('input,textarea');
+        if (inputAndTextarea) {
+            setUrlParams();
+        }
     })
 })
