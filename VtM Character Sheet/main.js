@@ -153,34 +153,31 @@ let readUrlParams = function() {
     })
 }
 
+function getClosest (listenerType = "click", closestSelector = "", toggleOpt) {
+    document.body.addEventListener(listenerType, function(e) {
+        let closestEl = e.target.closest(closestSelector);
+        if (closestEl) {
+            if (toggleOpt === 0) {
+                toggleDot(closestEl);
+            }
+            else if (toggleOpt === 1) {
+                toggleHelth(closestEl);
+            }
+        }
+        setUrlParams();
+    })
+}
 
 document.addEventListener('DOMContentLoaded', function() {
     readUrlParams();
     document.querySelector("#generation").addEventListener("change", function() {
         updateDot();
     })
-    document.body.addEventListener("click", function(e) {
-        let dot = e.target.closest('.dot')
-        if (dot) {
-            toggleDot(e.target);
-            setUrlParams();
-        }
-    })
-    document.body.addEventListener("click", function(e) {
-        let helthDot = e.target.closest('.helth_dot');
-        if (helthDot) {
-            toggleHelth(helthDot);
-            setUrlParams();
-        }
-    })
+    getClosest("click", ".dot", 0);
+    getClosest("click", ".helth_dot", 1);
     document.querySelector(".specialization>input").addEventListener("change", function(e) {
         changeSpecialization(e.target);
     })
     updateDot();
-    document.addEventListener("change", function(e) {
-        let inputAndTextarea = e.target.closest('input,textarea');
-        if (inputAndTextarea) {
-            setUrlParams();
-        }
-    })
+    getClosest("change", "input,textarea");
 })
