@@ -17,7 +17,7 @@ generations[14] = {limit: 5, pull: 10, spend: 1};
 generations[15] = {limit: 5, pull: 10, spend: 1};
 
 let setDots = (
-    selectElements = "",
+    selectElements = " ",
     counterOuter = true,
     counterValue = 1, 
     counterStart = counterValue, 
