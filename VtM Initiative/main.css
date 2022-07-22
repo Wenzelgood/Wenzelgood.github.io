@@ -1,0 +1,92 @@
+:root {
+  --white: #afafaf;
+  --red: #e31b23;
+  --bodyColor: rgb(40, 40, 40);
+  --borderFormEls: hsl(0, 0%, 10%);
+  --bgFormEls: hsl(0, 0%, 14%);
+  --bgFormElsFocus: hsl(0, 7%, 20%);
+}
+
+body {
+  background: var(--bodyColor);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 15% 70% 15%;
+  width: 100%;
+}
+
+.initiative {
+  grid-column: 2;
+  width: 100%;
+  padding: 15px;
+  height: 500px;
+}
+
+.initiative .row {
+  margin-top: 10px;
+  display: inline-flex;
+  width: 100%;
+}
+
+#isTurn input{
+  border: 2px solid #690000;
+}
+
+.initiative input,
+.initiative textarea,
+.initiative button {
+  width: 100%;
+  line-height: 1.5;
+  padding: 15px;
+  border: 1px solid var(--borderFormEls);
+  color: var(--white);
+  background: var(--bgFormEls);
+  transition: background-color 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25),
+  transform 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25);
+}
+
+.headerContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-around; 
+  align-items: center;
+}
+
+#turnCount {
+  color: white;
+}
+
+.initiative button {
+  margin-left: 10px;
+  width: auto;
+}
+
+.initiative button:hover {
+  cursor: pointer;
+  background: var(--bgFormElsFocus);
+}
+
+.initiative input[type='checkbox'] {
+  height: 25px;
+}
+
+.initiative input {
+  margin-left: 5px;
+}
+
+.initiative input.name {
+  width: 40%;
+}
+
+.initiative input.init--value {
+  width: 10%;
+}
+
+.initiative .optional {
+  display: flex;
+  width: 20%;
+  justify-content: center;
+  align-items: center;
+}
