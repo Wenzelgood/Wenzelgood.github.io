@@ -13,7 +13,7 @@ function getElemIndexById (arrNode, searchId) {
 (function () {
   const initiative = document.querySelector('.initiative');
   let turnCount = 1; 
-  let initArr;
+  let initArr = initiative.querySelectorAll('.row');
 
   document.querySelector('.btn--add').addEventListener('click', function () {
     let newRow = document.createElement('div');
