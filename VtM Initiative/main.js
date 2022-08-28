@@ -13,13 +13,14 @@ function getElemIndexById (arrNode, searchId) {
 (function () {
   const initiative = document.querySelector('.initiative');
   let turnCount = 1; 
-  let initArr = initiative.querySelectorAll('.row');
+  let initArr = [];
 
   document.querySelector('.btn--add').addEventListener('click', function () {
     let newRow = document.createElement('div');
     newRow.className = 'row';
     newRow.innerHTML = '<input type="text" name="" id="" class="name" placeholder="Имя"><input type="text" name="" id="" placeholder="Действие"><input type="number" min="0" value="0" name="" id="" class="init--value"><div class="optional"><input type="checkbox"></div>';
     initiative.appendChild(newRow);
+    initArr = initiative.querySelectorAll('.row');
   });
 
   document.querySelector('.initiative').addEventListener('change', function(e) {
@@ -40,7 +41,6 @@ function getElemIndexById (arrNode, searchId) {
 
   function resetActiveRow () {
     initArr = initiative.querySelectorAll('.row');
-    console.log(initArr);
     initArr.forEach(el => {
       el.id == 'isTurn'? el.id = '' : null; 
     });
