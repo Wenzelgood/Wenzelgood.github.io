@@ -4,7 +4,7 @@
 // @version      1.2
 // @description  Добавляет/обновляет кнопку со ссылкой на профиль преподавателя в админке. Ссылка всегда актуальна.
 // @author       wenzelgood
-// @match        https://www.tutoronline.ru/teacher/scheduleoperator
+// @match        https://profile.tutoronline.ru/teacher/scheduleoperator
 // @grant        none
 // @run-at       document-end
 // ==/UserScript==
@@ -111,5 +111,6 @@
     // Выполняется один раз при загрузке скрипта, чтобы обработать элементы, которые уже есть на странице.
     const initialProfiles = document.querySelectorAll('div.pslTutorProfile');
     initialProfiles.forEach(createOrUpdateButton);
+
 
 })();
