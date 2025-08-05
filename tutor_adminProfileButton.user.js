@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Кнопка в расписании на профиль репа в админке
 // @namespace    http://tampermonkey.net/
-// @version      1.2
-// @description  Добавляет/обновляет кнопку со ссылкой на профиль преподавателя в админке. Ссылка всегда актуальна.
+// @version      1.3
+// @description  Добавляет кнопку со ссылкой на профиль преподавателя в админке. Работает как в списке репетиторов, так и в карточке выбранного репетитора в расписании.
 // @author       wenzelgood
 // @match        https://profile.tutoronline.ru/teacher/scheduleoperator
 // @grant        none
@@ -12,105 +12,120 @@
 (function() {
     'use strict';
 
-    // Универсальная функция: создает новую кнопку или обновляет существующую
-    function createOrUpdateButton(profileDiv) {
-        // 1. Получаем актуальный tutorid
-        const tutorId = profileDiv.getAttribute('tutorid');
+    // --- ОБЩАЯ ФУНКЦИЯ ДЛЯ СОЗДАНИЯ КНОПКИ ---
+    // Создает кнопку, если ее еще нет в указанном родительском элементе.
+    function createAdminButton(tutorId, parentElement, buttonClass = 'admin-link-button') {
+        if (!tutorId || !parentElement) return;
 
-        // Если по какой-то причине tutorid отсутствует, ничего не делаем
-        if (!tutorId) {
+        // Уже существует кнопка?
+        if (parentElement.querySelector('.' + buttonClass)) {
             return;
         }
 
-        const targetContainer = profileDiv.querySelector('.timetable-teacher-card');
-
-        if (!targetContainer) {
-            console.error('Не удалось найти .timetable-teacher-card внутри элемента с tutorid:', tutorId);
-            return;
-        }
-
-        // Формируем актуальный URL
         const adminUrl = `https://administration.tutoronline.ru/Teacher/TeacherProfileDetails/${tutorId}`;
 
-        // 2. Ищем, может быть кнопка уже существует
-        let button = targetContainer.querySelector('.admin-link-button');
+        const button = document.createElement('a');
+        button.href = adminUrl;
+        button.textContent = 'Профиль в админке';
+        button.target = '_blank';
+        button.rel = 'noopener noreferrer';
+        button.className = buttonClass;
 
-        if (button) {
-            // Если кнопка найдена - просто обновляем ее ссылку
-            button.href = adminUrl;
-            console.log(`Ссылка обновлена для tutorid: ${tutorId}`);
-        } else {
-            // Если кнопки нет - создаем ее с нуля
-            button = document.createElement('a');
+        // Стили
+        Object.assign(button.style, {
+            display: 'block',
+            marginTop: '10px',
+            padding: '8px 12px',
+            backgroundColor: '#28a745',
+            color: 'white',
+            textAlign: 'center',
+            textDecoration: 'none',
+            borderRadius: '5px',
+            cursor: 'pointer',
+            fontWeight: 'bold'
+        });
 
-            // Настраиваем атрибуты
-            button.href = adminUrl;
-            button.textContent = 'Профиль в админке';
-            button.target = '_blank';
-            button.rel = 'noopener noreferrer';
+        parentElement.appendChild(button);
+        console.log(`Кнопка создана для tutorid: ${tutorId}`);
+    }
 
-            // Добавляем класс для идентификации
-            button.classList.add('admin-link-button');
 
-            // Добавляем стили
-            button.style.display = 'block';
-            button.style.marginTop = '10px';
-            button.style.padding = '8px 12px';
-            button.style.backgroundColor = '#28a745';
-            button.style.color = 'white';
-            button.style.textAlign = 'center';
-            button.style.textDecoration = 'none';
-            button.style.borderRadius = '5px';
-            button.style.cursor = 'pointer';
-            button.style.fontWeight = 'bold';
-
-            // 5. [ИЗМЕНЕНО] Добавляем кнопку в найденный targetContainer
-            targetContainer.appendChild(button);
-            console.log(`Кнопка создана для tutorid: ${tutorId}`);
+    // --- ЛОГИКА #1: Для профилей в общем списке (pslTutorProfile) ---
+    function processPslTutorProfile(profileDiv) {
+        const tutorId = profileDiv.getAttribute('tutorid');
+        const targetContainer = profileDiv.querySelector('.timetable-teacher-card');
+        if (tutorId && targetContainer) {
+            createAdminButton(tutorId, targetContainer, 'admin-link-button-list');
         }
     }
-    // --- НАБЛЮДАТЕЛЬ ЗА ИЗМЕНЕНИЯМИ НА СТРАНИЦЕ (MutationObserver) ---
 
+
+    // --- ЛОГИКА #2: Для выбранного репетитора в расписании (plhScheduleTutorProfile) ---
+    const scheduleContainer = document.getElementById('plhScheduleTutorProfile');
+    const scheduleButtonClass = 'admin-link-button-schedule';
+
+    function processScheduleTutorProfile() {
+        if (!scheduleContainer) return;
+
+        const tutorProfileElement = scheduleContainer.querySelector('[id^="tspTutorId"]');
+        const existingButton = scheduleContainer.querySelector('.' + scheduleButtonClass);
+
+        if (tutorProfileElement) {
+            // Реп выбран
+            const tutorId = tutorProfileElement.id.replace('tspTutorId', '');
+            const buttonContainer = tutorProfileElement.querySelector('.b-schedule-tutor-profile > .centered:last-of-type');
+            if (tutorId && buttonContainer) {
+                createAdminButton(tutorId, buttonContainer, scheduleButtonClass);
+            }
+        } else if (existingButton) {
+            // Реп не выбран (или выбор снят), а кнопка осталась
+            existingButton.remove();
+            console.log('Выбор репетитора снят, кнопка в расписании удалена.');
+        }
+    }
+
+
+    // --- ОБЩИЙ НАБЛЮДАТЕЛЬ ЗА ИЗМЕНЕНИЯМИ НА СТРАНИЦЕ (MutationObserver) ---
     const observer = new MutationObserver(mutations => {
         mutations.forEach(mutation => {
-            // Сценарий 1: На страницу добавлены новые узлы (например, загрузился новый профиль)
+            // --- Обработка событий для ЛОГИКИ #1 ---
             if (mutation.type === 'childList') {
                 mutation.addedNodes.forEach(node => {
                     if (node.nodeType === 1) { // Убедимся, что это элемент
-                        // Если сам добавленный узел - наш профиль
                         if (node.matches('div.pslTutorProfile')) {
-                            createOrUpdateButton(node);
+                            processPslTutorProfile(node);
                         }
-                        // Ищем профили внутри добавленного узла
-                        const newProfiles = node.querySelectorAll('div.pslTutorProfile');
-                        newProfiles.forEach(createOrUpdateButton);
+                        node.querySelectorAll('div.pslTutorProfile').forEach(processPslTutorProfile);
                     }
                 });
             }
+            if (mutation.type === 'attributes' && mutation.attributeName === 'tutorid' && mutation.target.matches('div.pslTutorProfile')) {
+                processPslTutorProfile(mutation.target);
+            }
 
-            // Сценарий 2: Изменился атрибут у существующего элемента
-            if (mutation.type === 'attributes' && mutation.attributeName === 'tutorid') {
-                // mutation.target - это тот самый элемент, у которого изменился атрибут
-                const changedDiv = mutation.target;
-                if (changedDiv.matches('div.pslTutorProfile')) {
-                     createOrUpdateButton(changedDiv);
-                }
+            // --- Обработка событий для ЛОГИКИ #2 ---
+            // Если изменения произошли внутри контейнера расписания, просто перезапускаем проверку
+            if (scheduleContainer && scheduleContainer.contains(mutation.target)) {
+                 processScheduleTutorProfile();
             }
         });
     });
 
-    // Настраиваем и запускаем наблюдателя
+    // Настраиваем и запускаем наблюдателя на весь док
     observer.observe(document.body, {
-        childList: true,      // Следить за добавлением/удалением дочерних элементов
-        subtree: true,        // Следить во всем дереве, а не только в body
-        attributes: true,     // Следить за изменением атрибутов
-        attributeFilter: ['tutorid'] // Следить только за изменениями атрибута 'tutorid' для эффективности
+        childList: true,
+        subtree: true,
+        attributes: true,
+        attributeFilter: ['tutorid']
     });
 
-    // --- ПЕРВОНАЧАЛЬНЫЙ ЗАПУСК ---
-    // Выполняется один раз при загрузке скрипта, чтобы обработать элементы, которые уже есть на странице.
-    const initialProfiles = document.querySelectorAll('div.pslTutorProfile');
-    initialProfiles.forEach(createOrUpdateButton);
 
+    // --- ПЕРВОНАЧАЛЬНЫЙ ЗАПУСК ДЛЯ ЛОГИК ---
+
+    // Запуск для Логики #1
+    document.querySelectorAll('div.pslTutorProfile').forEach(processPslTutorProfile);
+
+    // Запуск для Логики #2
+    processScheduleTutorProfile();
 
 })();
